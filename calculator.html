@@ -1,9 +1,91 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>X1. Yet Another Basic Calculator</title>
-  </head>
-  <body>
-    <input type='text' id='entry' />
-  </body>
+
+<head>
+  <title>X1. Yet Another Basic Calculator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 25vw;
+    }
+
+    input {
+      width: 100%;
+    }
+
+    dt {
+      font-size: 0.7rem;
+      font-weight: bold;
+      color: gray;
+    }
+
+    dd {
+      font-size: 1.1rem;
+      margin: 0;
+      margin-bottom: 0.9em;
+    }
+
+    #calcOutput {
+      background-color: gainsboro;
+    }
+  </style>
+</head>
+
+<body>
+  <dl>
+    <dt>Input</dt>
+    <dd><input id='calcInput' type='text' /></dd>
+    <dt>Output</dt>
+    <dd id="calcOutput"></dd>
+  </dl>
+
+
+  <script>
+
+    function calculate(input) {
+
+      let output  // we're going to return this value
+
+      // replace the code below with your own
+      // here are some examples of what you are allowed to do:
+
+      // you may use any member function of the String class
+      // search for the String class docs on MDN
+      output = input.at(0)
+
+      // you may use Number() to convert a String value to Numeric
+      output = Number(input)
+
+      // and of course, you may use basic operations
+      output = output + 1
+
+      // return the final output for display
+      return output
+    }
+
+    // you'll need to define your own helper functions down here!
+
+
+    // remember DRY: Don't Repeat Yourself!
+    // break it down into small functions instead
+
+
+
+
+    ///// NO TOUCHY PAST THIS POINT!!
+
+    let textInput = document.getElementById("calcInput")
+    let outputDiv = document.getElementById('calcOutput')
+
+    console.log(textInput)
+
+    textInput.addEventListener('input', (e) => {
+      let entered = e.target.value
+      outputDiv.innerHTML = calculate(entered)
+    })
+
+  </script>
+
+</body>
+
 </html>
